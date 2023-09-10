@@ -5,14 +5,15 @@
 		<h2>Alta Personas</h2>
 		<form id='formulario' method='post' action='{{ url("alta-personas/") }}'>
 			@csrf
+			<div class="inputId">
+				<input type="text" id="nif" name="nif" value="{{ old('nif') ?? $persona->nif ?? null }}" placeholder="Nif" required>
+				<input type="text" id="direccion" name="direccion" value="{{ old('direccion') ?? $persona->direccion ?? null }}" placeholder="Dirección">
+				</div>
+				<input type="text" id="nombre" name="nombre" value="{{ old('nombre') ?? $persona->nombre ?? null }}" placeholder="Nombre">
 
-			<input type="text" id="nif" name="nif" value="{{ old('nif') ?? $persona->nif ?? null }}" placeholder="Nif" required>
-			<input type="text" id="direccion" name="direccion" value="{{ old('direccion') ?? $persona->direccion ?? null }}" placeholder="Dirección">
-			<input type="text" id="nombre" name="nombre" value="{{ old('nombre') ?? $persona->nombre ?? null }}" placeholder="Nombre">
-
-			<input type="text" id="email" name="email" value="{{ old('email') ?? $persona->email ?? null }}" placeholder="Email">
-			<input type="text" id="apellidos" name="apellidos" value="{{ old('apellidos') ?? $persona->apellidos ?? null }}" placeholder="Apellidos" required>
-
+				<input type="text" id="email" name="email" value="{{ old('email') ?? $persona->email ?? null }}" placeholder="Email">
+				<input type="text" id="apellidos" name="apellidos" value="{{ old('apellidos') ?? $persona->apellidos ?? null }}" placeholder="Apellidos" required>
+			
 			<br><br>
 			<label>
 				<h4 class="tarjeta">Tarjeta</h4>
